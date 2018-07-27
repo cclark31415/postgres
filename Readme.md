@@ -43,7 +43,7 @@ exit 0
 
 Make it executable
 ```console
-sudo chmod 755 postgres-docker 
+sudo chmod 744 postgres-docker 
 ```
 
 Create the service launcher
