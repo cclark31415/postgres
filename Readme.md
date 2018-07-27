@@ -54,3 +54,9 @@ sudo systemctl daemon-reload
 ```
 
 You should be able to do `sudo service postgres-docker start` to kick it off
+
+I also created an alias to easily jump into the psql command line:
+
+```console
+alias ps='docker run -it --rm --network container:postgres_db_1 postgres psql -h localhost -U postgres'
+```
