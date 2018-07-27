@@ -60,3 +60,26 @@ I also created an alias to easily jump into the psql command line:
 ```console
 alias ps='docker run -it --rm --network container:postgres_db_1 postgres psql -h localhost -U postgres'
 ```
+
+If you want to create a new user, you can run this from the command line
+
+```
+docker run -it --rm --network container:postgres_db_1 postgres psql -h localhost -U postgres -c " \
+        do \
+        \$body\$ \
+        declare \
+          num_users integer; \
+        begin \
+          SELECT count(*) \
+            into num_users \
+          FROM pg_user \
+          WHERE usename = 'bartSimpson'; \
+        \
+          IF num_users = 0 THEN \
+              CREATE ROLE bartSimpson LOGIN PASSWORD 'AyCaramba'; \
+          END IF; \
+        end \
+        \$body\$ \
+        ;"
+```
+It executes a single psql command in the container

@@ -11,8 +11,7 @@ services:
     volumes:
          - pgdata:/var/lib/postgresql/data
     ports:
-      # Note that this is not the default port
-      - "5442:5442"
+      - "5432:5432"
     network_mode: "bridge"
 volumes: 
   pgdata:
