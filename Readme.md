@@ -60,6 +60,7 @@ I also created an alias to easily jump into the psql command line:
 ```console
 alias ps='docker run -it --rm --network container:postgres_db_1 postgres psql -h localhost -U postgres'
 ```
+Just typing `ps` will get you into psql
 
 If you want to create a new user, you can run this from the command line
 
