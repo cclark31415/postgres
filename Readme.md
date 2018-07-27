@@ -2,7 +2,8 @@ This is meant to start up a Postgres instance on a Debian distro (specifically M
 
 I still could not connect from a pgadmin4 container to this database no matter what I did, but DBeaver does everything I need, so I'll stick with it for now.  PGAdmin4 should work if I install it in the OS, so that's a fallback if I need it.
 
-I created a service so this starts up on boot.  Create a file called postgres-docker in the /etc/init.d folder with this script in it:
+I created a service so this starts up on boot.  If you want to do this,  start out by creating a file called postgres-docker in the /etc/init.d folder with this script in it:
+
 ```bash
 #! /bin/sh
 # /etc/init.d/blah
