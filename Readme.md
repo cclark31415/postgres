@@ -74,10 +74,10 @@ docker run -it --rm --network container:postgres_db_1 postgres psql -h localhost
           SELECT count(*) \
             into num_users \
           FROM pg_user \
-          WHERE usename = 'bartSimpson'; \
+          WHERE usename = 'bartsimpson'; \
         \
           IF num_users = 0 THEN \
-              CREATE ROLE bartSimpson LOGIN PASSWORD 'AyCaramba'; \
+              CREATE ROLE bartsimpson LOGIN PASSWORD 'AyCaramba'; \
           END IF; \
         end \
         \$body\$ \
